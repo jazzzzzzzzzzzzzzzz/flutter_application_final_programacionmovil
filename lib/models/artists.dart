@@ -8,9 +8,9 @@ class ArtistModel {
 }
 
 List<ArtistModel> listArtists = [
-  ArtistModel(id: 'user1', name: 'Halsey', image: 'Halsey.jpg'),
-  ArtistModel(id: 'user2', name: 'Dua Lipa', image: 'Dualipa.jpg'),
-  ArtistModel(id: 'user3', name: 'Ariana Grande', image: 'Arianagrande.jpg'),
-  ArtistModel(id: 'user4', name: 'Shawn Mendes', image: 'Shawn.jpg'),
-  ArtistModel(id: 'user5', name: 'Charlie Puth', image: 'Charlie.jpg'),
+  ArtistModel(id: 'user1', name: 'Halsey', image: 'halsey.jpg'),
+  ArtistModel(id: 'user2', name: 'Dua Lipa', image: 'dualipa.jpg'),
+  ArtistModel(id: 'user3', name: 'Ariana Grande', image: 'arianagrande.jpg'),
+  ArtistModel(id: 'user4', name: 'Shawn Mendes', image: 'shawn.jpg'),
+  ArtistModel(id: 'user5', name: 'Charlie Puth', image: 'charlie.jpg'),
 ];

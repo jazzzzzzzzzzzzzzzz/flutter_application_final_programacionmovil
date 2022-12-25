@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_final_programacionmovil/const.dart';
 
 class MainPage extends StatefulWidget {
@@ -57,51 +55,54 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: black,
       body: body(),
-      bottomNavigationBar: Stack(
-        children: [
-          Image.asset(
-            'assets/cover/halsey.jpg',
-            fit: BoxFit.cover,
-            width: double.infinity,
-          ),
-          Container(
-            height: 60,
-            decoration: const BoxDecoration(
-                border: Border(top: BorderSide(color: green))),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: List.generate(
-                  icons.length,
-                  (index) => GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            currentPage = index;
-                          });
-                        },
-                        child: SizedBox(
-                          height: 40,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              AnimatedContainer(
-                                duration: const Duration(milliseconds: 250),
-                                width: currentPage == index ? 24 : 0,
-                                height: 3,
-                                decoration: BoxDecoration(
-                                    color: currentPage == index ? green : white,
-                                    borderRadius: BorderRadius.circular(5)),
-                              ),
-                              Icon(
-                                icons[index],
-                                color: currentPage == index ? green : white,
-                              ),
-                            ],
-                          ),
-                        ),
-                      )),
+      bottomNavigationBar: Container(
+        child: Stack(
+          children: [
+            Image.asset(
+              'assets/cover/halsey.jpg',
+              fit: BoxFit.cover,
+              width: double.infinity,
             ),
-          ),
-        ],
+            Container(
+              height: 60,
+              decoration: const BoxDecoration(
+                  border: Border(top: BorderSide(color: green))),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: List.generate(
+                    icons.length,
+                    (index) => GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              currentPage = index;
+                            });
+                          },
+                          child: SizedBox(
+                            height: 40,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                AnimatedContainer(
+                                  duration: const Duration(milliseconds: 250),
+                                  width: currentPage == index ? 24 : 0,
+                                  height: 3,
+                                  decoration: BoxDecoration(
+                                      color:
+                                          currentPage == index ? green : white,
+                                      borderRadius: BorderRadius.circular(5)),
+                                ),
+                                Icon(
+                                  icons[index],
+                                  color: currentPage == index ? green : white,
+                                ),
+                              ],
+                            ),
+                          ),
+                        )),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
