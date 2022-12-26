@@ -22,8 +22,9 @@ class HomePageHeader extends StatelessWidget {
                   style: TextStyle(
                       color: white, fontSize: 18, fontWeight: FontWeight.bold),
                 ),
+                SizedBox(height: 10),
                 Text(
-                  'Escuchemos algo genial hoy',
+                  'Let\'s Escuchemos algo genial por hoy',
                   style: TextStyle(color: white, fontSize: 12),
                 ),
               ],
@@ -47,7 +48,7 @@ class HomePageHeader extends StatelessWidget {
                   child: Container(
                     width: 7,
                     height: 7,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: green,
                       shape: BoxShape.circle,
                     ),

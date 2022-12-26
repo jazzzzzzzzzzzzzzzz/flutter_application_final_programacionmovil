@@ -6,8 +6,10 @@ import 'package:flutter_application_final_programacionmovil/pages/home_page.dart
 import 'package:flutter_application_final_programacionmovil/providers/page_provider.dart';
 import 'package:provider/provider.dart';
 
+import '../providers/song_provider.dart';
 import '../widgets/bgblur.dart';
 import '../widgets/cutom_bottom_nav.dart';
+import 'music_detail.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -21,10 +23,11 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     PageProvider pageProvider = Provider.of<PageProvider>(context);
+    SongProvider songProvider = Provider.of<SongProvider>(context);
     Widget body() {
       switch (pageProvider.currentPage) {
         case 0:
-          return HomePage();
+          return const HomePage();
         case 1:
           return const Center(
             child: Text(
@@ -51,32 +54,46 @@ class _MainPageState extends State<MainPage> {
       }
     }
 
-    return Scaffold(
-      backgroundColor: black,
-      body: body(),
-      bottomNavigationBar: SizedBox(
-        height: 60,
-        child: Stack(
-          children: [
-            Image.asset(
-              'assets/cover/halsey.jpg',
-              fit: BoxFit.cover,
-              width: double.infinity,
-            ),
-            BgBlur(
-              blur: 10,
-              opacity: 0.8,
-              color: black,
-              child: Column(
-                children: [
-                  //CurrentSong
-                  CurrentSong(),
-                  // custon botton nav
-                  CustomBottomNAv(),
-                ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: black,
+        body: body(),
+        bottomNavigationBar: SizedBox(
+          height: songProvider.currentSong != null ? 120 : 60,
+          child: Stack(
+            children: [
+              Image.asset(
+                songProvider.currentSong != null
+                    ? 'assets/cover/${songProvider.currentSong!.image!}'
+                    : 'assets/cover/Adele - Easy On Me (Official Lyric Video).jpg',
+                fit: BoxFit.cover,
+                width: double.infinity,
               ),
-            ),
-          ],
+              BgBlur(
+                blur: 10,
+                opacity: 0.8,
+                color: black,
+                child: Column(
+                  children: [
+                    //CurrentSong
+                    songProvider.currentSong != null
+                        ? GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const MusicDetail(),
+                                  ));
+                            },
+                            child: const CurrentSong())
+                        : Container(),
+                    //Custom Bottom Nav
+                    const CustomBottomNAv(),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

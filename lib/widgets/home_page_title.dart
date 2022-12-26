@@ -18,10 +18,10 @@ class HomePageTitle extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: TextStyle(color: white, fontWeight: FontWeight.w600),
+              style: const TextStyle(color: white, fontWeight: FontWeight.w600),
             ),
           ),
-          Icon(
+          const Icon(
             Icons.keyboard_arrow_right_rounded,
             color: white,
           )
