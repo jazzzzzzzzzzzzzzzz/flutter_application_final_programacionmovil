@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../models/songs.dart';
+import 'package:music_app_ui/models/songs.dart';
 
 class RecentProvider with ChangeNotifier {
   List<SongModel> _recent = [];

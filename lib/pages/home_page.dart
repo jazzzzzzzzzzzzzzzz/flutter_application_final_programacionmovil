@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_final_programacionmovil/models/artists.dart';
-import 'package:flutter_application_final_programacionmovil/models/packages.dart';
-import 'package:flutter_application_final_programacionmovil/models/songs.dart';
-import 'package:flutter_application_final_programacionmovil/pages/music_detail.dart';
-import 'package:flutter_application_final_programacionmovil/providers/package_provider.dart';
+import 'package:music_app_ui/models/artists.dart';
+import 'package:music_app_ui/models/packages.dart';
+import 'package:music_app_ui/models/songs.dart';
+import 'package:music_app_ui/pages/music_detail.dart';
+import 'package:music_app_ui/pages/package_page.dart';
+import 'package:music_app_ui/providers/package_provider.dart';
+import 'package:music_app_ui/providers/recent_played_provider.dart';
+import 'package:music_app_ui/providers/song_provider.dart';
+import 'package:music_app_ui/widgets/fav_artist_item.dart';
+import 'package:music_app_ui/widgets/home_page_header.dart';
+import 'package:music_app_ui/widgets/home_page_title.dart';
+import 'package:music_app_ui/widgets/song_package_item.dart';
 import 'package:provider/provider.dart';
-
-import '../const.dart';
-import '../providers/recent_played_provider.dart';
-import '../providers/song_provider.dart';
-import '../widgets/fav_artist_item.dart';
-import '../widgets/home_page_header.dart';
-import '../widgets/home_page_title.dart';
-import '../widgets/song_package_item.dart';
-import 'package_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

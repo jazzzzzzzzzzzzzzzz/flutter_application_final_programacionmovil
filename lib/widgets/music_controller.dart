@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_final_programacionmovil/const.dart';
-import 'package:flutter_application_final_programacionmovil/pages/package_page.dart';
-import 'package:flutter_application_final_programacionmovil/providers/fav_provider.dart';
-import 'package:flutter_application_final_programacionmovil/providers/package_provider.dart';
-import 'package:flutter_application_final_programacionmovil/widgets/bgblur.dart';
-
-import '../providers/song_provider.dart';
+import 'package:music_app_ui/const.dart';
+import 'package:music_app_ui/pages/package_page.dart';
+import 'package:music_app_ui/providers/fav_provider.dart';
+import 'package:music_app_ui/providers/package_provider.dart';
+import 'package:music_app_ui/providers/song_provider.dart';
+import 'package:music_app_ui/widgets/bgblur.dart';
 
 class MusicController extends StatelessWidget {
   const MusicController({

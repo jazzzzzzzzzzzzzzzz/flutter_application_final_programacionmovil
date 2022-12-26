@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../const.dart';
+import 'package:music_app_ui/const.dart';
 
 class SongPackageItem extends StatelessWidget {
   final String image, text;

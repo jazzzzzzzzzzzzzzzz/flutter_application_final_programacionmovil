@@ -1,4 +1,4 @@
-import 'package:flutter_application_final_programacionmovil/models/songs.dart';
+import '../models/songs.dart';
 
 class PackageModel {
   final String? idPackage, name, image;

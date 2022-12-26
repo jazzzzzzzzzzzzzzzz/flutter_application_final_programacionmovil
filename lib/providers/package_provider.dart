@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_application_final_programacionmovil/models/packages.dart';
+import 'package:flutter/material.dart';
+import 'package:music_app_ui/models/packages.dart';
 
 class PackageProvider with ChangeNotifier {
   PackageModel? _currentPackage;

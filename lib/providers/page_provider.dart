@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 class PageProvider with ChangeNotifier {
   int _currentPage = 0;

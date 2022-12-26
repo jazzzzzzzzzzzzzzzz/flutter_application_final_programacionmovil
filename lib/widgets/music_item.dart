@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_final_programacionmovil/models/songs.dart';
-import 'package:flutter_application_final_programacionmovil/providers/fav_provider.dart';
-import 'package:flutter_application_final_programacionmovil/providers/recent_played_provider.dart';
-import 'package:flutter_application_final_programacionmovil/providers/song_provider.dart';
-
-import '../const.dart';
+import 'package:music_app_ui/const.dart';
+import 'package:music_app_ui/models/songs.dart';
+import 'package:music_app_ui/providers/fav_provider.dart';
+import 'package:music_app_ui/providers/recent_played_provider.dart';
+import 'package:music_app_ui/providers/song_provider.dart';
 
 class MusicItem extends StatelessWidget {
   const MusicItem({

@@ -1,16 +1,13 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_final_programacionmovil/const.dart';
-import 'package:flutter_application_final_programacionmovil/pages/home_page.dart';
-import 'package:flutter_application_final_programacionmovil/providers/page_provider.dart';
-import 'package:flutter_application_final_programacionmovil/widgets/current_song.dart';
+import 'package:music_app_ui/const.dart';
+import 'package:music_app_ui/pages/home_page.dart';
+import 'package:music_app_ui/pages/music_detail.dart';
+import 'package:music_app_ui/providers/page_provider.dart';
+import 'package:music_app_ui/providers/song_provider.dart';
+import 'package:music_app_ui/widgets/bgblur.dart';
+import 'package:music_app_ui/widgets/current_song.dart';
+import 'package:music_app_ui/widgets/cutom_bottom_nav.dart';
 import 'package:provider/provider.dart';
-
-import '../providers/song_provider.dart';
-import '../widgets/bgblur.dart';
-import '../widgets/cutom_bottom_nav.dart';
-import 'music_detail.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);

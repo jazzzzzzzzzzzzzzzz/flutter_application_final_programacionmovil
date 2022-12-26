@@ -3,8 +3,7 @@ import 'dart:async';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import '../models/songs.dart';
+import 'package:music_app_ui/models/songs.dart';
 
 class SongProvider with ChangeNotifier {
   SongModel? _currentSong;

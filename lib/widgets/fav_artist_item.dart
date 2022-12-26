@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../const.dart';
-import '../models/artists.dart';
+import 'package:music_app_ui/const.dart';
+import 'package:music_app_ui/models/artists.dart';
 
 class FavArtistItem extends StatelessWidget {
   final ArtistModel artist;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_final_programacionmovil/const.dart';
-import 'package:flutter_application_final_programacionmovil/providers/fav_provider.dart';
-import 'package:flutter_application_final_programacionmovil/providers/song_provider.dart';
+import 'package:music_app_ui/const.dart';
+import 'package:music_app_ui/providers/fav_provider.dart';
+import 'package:music_app_ui/providers/song_provider.dart';
 import 'package:provider/provider.dart';
 
 class CurrentSong extends StatelessWidget {

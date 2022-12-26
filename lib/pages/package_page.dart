@@ -1,15 +1,11 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_application_final_programacionmovil/const.dart';
-import 'package:flutter_application_final_programacionmovil/models/packages.dart';
-import 'package:flutter_application_final_programacionmovil/providers/package_provider.dart';
-import 'package:flutter_application_final_programacionmovil/widgets/music_item.dart';
+import 'package:music_app_ui/const.dart';
+import 'package:music_app_ui/providers/fav_provider.dart';
+import 'package:music_app_ui/providers/package_provider.dart';
+import 'package:music_app_ui/providers/recent_played_provider.dart';
+import 'package:music_app_ui/providers/song_provider.dart';
+import 'package:music_app_ui/widgets/music_item.dart';
 import 'package:provider/provider.dart';
-
-import '../providers/fav_provider.dart';
-import '../providers/recent_played_provider.dart';
-import '../providers/song_provider.dart';
 
 class PackagePage extends StatefulWidget {
   const PackagePage({Key? key}) : super(key: key);

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../const.dart';
+import 'package:music_app_ui/const.dart';
 
 class HomePageHeader extends StatelessWidget {
   const HomePageHeader({

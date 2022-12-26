@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:music_app_ui/const.dart';
+import 'package:music_app_ui/providers/page_provider.dart';
 import 'package:provider/provider.dart';
-
-import '../const.dart';
-import '../providers/page_provider.dart';
 
 class CustomBottomNAv extends StatelessWidget {
   const CustomBottomNAv({

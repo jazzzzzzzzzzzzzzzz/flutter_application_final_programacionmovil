@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_final_programacionmovil/widgets/music_controller.dart';
-import 'package:flutter_application_final_programacionmovil/widgets/song_lyric.dart';
-import 'package:flutter_lyric/lyric_ui/lyric_ui.dart';
-import 'package:flutter_lyric/lyric_ui/ui_netease.dart';
+import 'package:flutter_lyric/lyrics_reader.dart';
+import 'package:music_app_ui/const.dart';
+import 'package:music_app_ui/providers/fav_provider.dart';
+import 'package:music_app_ui/providers/package_provider.dart';
+import 'package:music_app_ui/providers/song_provider.dart';
+import 'package:music_app_ui/widgets/music_controller.dart';
+import 'package:music_app_ui/widgets/song_lyric.dart';
 import 'package:provider/provider.dart';
-
-import '../const.dart';
-import '../providers/fav_provider.dart';
-import '../providers/package_provider.dart';
-import '../providers/song_provider.dart';
 
 class MusicDetail extends StatefulWidget {
   const MusicDetail({Key? key}) : super(key: key);

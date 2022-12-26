@@ -1,16 +1,22 @@
-# flutter_application_final_programacionmovil
+# Music App UI
 
-A new Flutter project.
+## Support
 
-## Getting Started
+https://www.buymeacoffee.com/syarifhidayat
+https://sociabuzz.com/syarifhidayatullah2020/tribe
 
-This project is a starting point for a Flutter application.
+## UI/UX
 
-A few resources to get you started if this is your first Flutter project:
+https://dribbble.com/shots/17409554-Spotify-App-Redesign-Concept
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Youtube
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://youtu.be/fV67vy7fJI
+
+## Preview
+
+<p align="middle">
+<img src="assets/previews/home.png" alt="Home" width="200">
+<img src="assets/previews/package.png" alt="Package" width="200">
+<img src="assets/previews/detail.png" alt="Detail" width="200">
+</p>
