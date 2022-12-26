@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_final_programacionmovil/const.dart';
 import 'package:flutter_application_final_programacionmovil/models/packages.dart';
 import 'package:flutter_application_final_programacionmovil/providers/package_provider.dart';
+import 'package:flutter_application_final_programacionmovil/widgets/music_item.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/fav_provider.dart';

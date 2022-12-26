@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_final_programacionmovil/widgets/music_controller.dart';
+import 'package:flutter_application_final_programacionmovil/widgets/song_lyric.dart';
 import 'package:flutter_lyric/lyric_ui/lyric_ui.dart';
 import 'package:flutter_lyric/lyric_ui/ui_netease.dart';
 import 'package:provider/provider.dart';

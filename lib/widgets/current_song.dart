@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_final_programacionmovil/const.dart';
+import 'package:flutter_application_final_programacionmovil/providers/fav_provider.dart';
+import 'package:flutter_application_final_programacionmovil/providers/song_provider.dart';
+import 'package:provider/provider.dart';
 
 class CurrentSong extends StatelessWidget {
   const CurrentSong({
@@ -31,7 +34,7 @@ class CurrentSong extends StatelessWidget {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(songProvider.currentSong!.title!,
                     style: const TextStyle(
                         color: white,

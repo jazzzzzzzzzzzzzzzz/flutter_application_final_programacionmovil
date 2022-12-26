@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_final_programacionmovil/const.dart';
 import 'package:flutter_application_final_programacionmovil/pages/home_page.dart';
 import 'package:flutter_application_final_programacionmovil/providers/page_provider.dart';
+import 'package:flutter_application_final_programacionmovil/widgets/current_song.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/song_provider.dart';

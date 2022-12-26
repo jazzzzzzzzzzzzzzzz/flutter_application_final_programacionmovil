@@ -29,7 +29,7 @@ class SongPackageItem extends StatelessWidget {
         Text(
           text,
           maxLines: 2,
-          style: TextStyle(color: white, fontSize: 14),
+          style: const TextStyle(color: white, fontSize: 14),
         )
       ],
     );
