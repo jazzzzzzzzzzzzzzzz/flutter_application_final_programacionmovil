@@ -20,7 +20,9 @@ class _PackagePageState extends State<PackagePage> {
           elevation: 0,
           backgroundColor: transparent,
           leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               icon:
                   const Icon(Icons.keyboard_arrow_left_rounded, color: white)),
           actions: [
@@ -108,46 +110,82 @@ class _PackagePageState extends State<PackagePage> {
               ],
             ),
           ),
-          const Text(
-            ' Presentando',
-            style: TextStyle(color: white, fontSize: 14),
+          const SizedBox(height: 20),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: const Text(
+              ' Presentando',
+              style: TextStyle(color: white, fontSize: 16),
+            ),
           ),
-          SizedBox(height: 10),
-          Column(
-            children: [
-              ...List.generate(packages[0].songs!.length, (index) {
-                var data = packages[0].songs![index];
-                return Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            image: DecorationImage(
-                                image: AssetImage('assets/cover/${data.image}'),
-                                fit: BoxFit.cover)),
+          const SizedBox(height: 10),
+          Expanded(
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                children: [
+                  ...List.generate(packages[0].songs!.length, (index) {
+                    var data = packages[0].songs![index];
+                    return Padding(
+                      padding: index == 0
+                          ? const EdgeInsets.only(top: 0)
+                          : const EdgeInsets.only(top: 10),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 40,
+                              width: 40,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          'assets/cover/${data.image}'),
+                                      fit: BoxFit.cover)),
+                            ),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    data.title!,
+                                    style: const TextStyle(
+                                        color: white,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                  SizedBox(height: 5),
+                                  Text(
+                                    data.singer!,
+                                    style: const TextStyle(
+                                        color: white, fontSize: 12),
+                                  )
+                                ],
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: const Icon(
+                                Icons.favorite_border_rounded,
+                                color: white,
+                              ),
+                            ),
+                            IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  Icons.more_vert_rounded,
+                                  color: white,
+                                )),
+                          ],
+                        ),
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            data.title!,
-                            style: const TextStyle(color: white),
-                          ),
-                          Text(
-                            data.singer!,
-                            style: const TextStyle(color: white, fontSize: 12),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                );
-              })
-            ],
+                    );
+                  })
+                ],
+              ),
+            ),
           )
         ]));
   }
