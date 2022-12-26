@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_final_programacionmovil/models/artists.dart';
 import 'package:flutter_application_final_programacionmovil/models/packages.dart';
 import 'package:flutter_application_final_programacionmovil/models/songs.dart';
+import 'package:flutter_application_final_programacionmovil/pages/music_detail.dart';
 import 'package:flutter_application_final_programacionmovil/providers/package_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -72,11 +73,14 @@ class HomePage extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const PackagePage()));
+                                          const MusicDetail()));
                             },
-                            child: SongPackageItem(
-                                image: 'cover/${recent[index].image}',
-                                text: recent[index].title!),
+                            child: GestureDetector(
+                              onTap: () {},
+                              child: SongPackageItem(
+                                  image: 'cover/${recent[index].image}',
+                                  text: recent[index].title!),
+                            ),
                           )))
                 ],
               ),
