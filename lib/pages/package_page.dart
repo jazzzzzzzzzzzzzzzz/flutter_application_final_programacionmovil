@@ -3,6 +3,8 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_final_programacionmovil/const.dart';
 import 'package:flutter_application_final_programacionmovil/models/packages.dart';
+import 'package:flutter_application_final_programacionmovil/providers/package_provider.dart';
+import 'package:provider/provider.dart';
 
 class PackagePage extends StatefulWidget {
   const PackagePage({Key? key}) : super(key: key);
@@ -14,6 +16,7 @@ class PackagePage extends StatefulWidget {
 class _PackagePageState extends State<PackagePage> {
   @override
   Widget build(BuildContext context) {
+    PackageProvider packageProvider = Provider.of<PackageProvider>(context);
     return Scaffold(
         backgroundColor: black,
         appBar: AppBar(
@@ -41,7 +44,7 @@ class _PackagePageState extends State<PackagePage> {
             child: Stack(
               children: [
                 Image.asset(
-                  'assets/package/image1.jpg',
+                  'assets/package/${packageProvider.currentPackage!.image}',
                   fit: BoxFit.cover,
                   width: MediaQuery.of(context).size.width,
                 ),
@@ -53,8 +56,8 @@ class _PackagePageState extends State<PackagePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('Todays TOP HITS',
-                            style: TextStyle(
+                        Text(packageProvider.currentPackage!.name!,
+                            style: const TextStyle(
                                 color: white,
                                 fontSize: 48,
                                 fontWeight: FontWeight.bold)),
@@ -62,7 +65,7 @@ class _PackagePageState extends State<PackagePage> {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Row(
-                              children: const [
+                              children: [
                                 //
                                 Icon(
                                   Icons.favorite,
@@ -71,7 +74,7 @@ class _PackagePageState extends State<PackagePage> {
                                 ),
                                 SizedBox(width: 5),
                                 Text(
-                                  '123 likes',
+                                  '${packageProvider.totalLikes()}Likes',
                                   style: TextStyle(color: grey, fontSize: 12),
                                 )
                               ],
@@ -124,8 +127,9 @@ class _PackagePageState extends State<PackagePage> {
               physics: const BouncingScrollPhysics(),
               child: Column(
                 children: [
-                  ...List.generate(packages[0].songs!.length, (index) {
-                    var data = packages[0].songs![index];
+                  ...List.generate(
+                      packageProvider.currentPackage!.songs!.length, (index) {
+                    var data = packageProvider.currentPackage!.songs![index];
                     return Padding(
                       padding: index == 0
                           ? const EdgeInsets.only(top: 0)

@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
     List<SongModel> recent = listSongs;
     List<PackageModel> madeForYou = packages;
     List<PackageModel> popular_hits = packages.reversed.toList();
-    PackageProvider packageProvider = Provider.of<PackageProvider>(context)
+    PackageProvider packageProvider = Provider.of<PackageProvider>(context);
     return SingleChildScrollView(
         scrollDirection: Axis.vertical,
         physics: const BouncingScrollPhysics(),
@@ -59,15 +59,25 @@ class HomePage extends StatelessWidget {
               child: Row(
                 children: [
                   ...List.generate(
-                      recent.length,
+                      madeForYou.length,
                       (index) => Padding(
-                            padding: index == 0
-                                ? const EdgeInsets.only(left: 10, right: 10)
-                                : const EdgeInsets.only(right: 10),
+                          padding: index == 0
+                              ? const EdgeInsets.only(left: 10, right: 10)
+                              : const EdgeInsets.only(right: 10),
+                          child: GestureDetector(
+                            onTap: () {
+                              packageProvider.currentPackage =
+                                  madeForYou[index];
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const PackagePage()));
+                            },
                             child: SongPackageItem(
                                 image: 'cover/${recent[index].image}',
                                 text: recent[index].title!),
-                          ))
+                          )))
                 ],
               ),
             ),
