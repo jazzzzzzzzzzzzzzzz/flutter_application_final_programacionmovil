@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_final_programacionmovil/const.dart';
+import 'package:flutter_application_final_programacionmovil/pages/home_page.dart';
 import 'package:flutter_application_final_programacionmovil/providers/page_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -23,12 +24,7 @@ class _MainPageState extends State<MainPage> {
     Widget body() {
       switch (pageProvider.currentPage) {
         case 0:
-          return const Center(
-            child: Text(
-              'Home',
-              style: TextStyle(color: green, fontSize: 32),
-            ),
-          );
+          return HomePage();
         case 1:
           return const Center(
             child: Text(
@@ -51,12 +47,7 @@ class _MainPageState extends State<MainPage> {
             ),
           );
         default:
-          return const Center(
-            child: Text(
-              'Home',
-              style: TextStyle(color: green, fontSize: 32),
-            ),
-          );
+          return const HomePage();
       }
     }
 
