@@ -70,45 +70,70 @@ class _MainPageState extends State<MainPage> {
               blur: 10,
               opacity: 0.8,
               color: black,
-              child: Container(
-                height: 60,
-                decoration: const BoxDecoration(
-                    border: Border(top: BorderSide(color: green))),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: List.generate(
-                      icons.length,
-                      (index) => GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                currentPage = index;
-                              });
-                            },
-                            child: SizedBox(
-                              height: 40,
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  AnimatedContainer(
-                                    duration: const Duration(milliseconds: 250),
-                                    width: currentPage == index ? 24 : 0,
-                                    height: 3,
-                                    decoration: BoxDecoration(
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  image: AssetImage('assets/cover/halsey.jpg'),
+                                  fit: BoxFit.cover)),
+                        )
+                      ],
+                    ),
+                  ),
+                  // custon botton nav
+                  Container(
+                    height: 60,
+                    decoration: const BoxDecoration(
+                        border: Border(top: BorderSide(color: green))),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: List.generate(
+                          icons.length,
+                          (index) => GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    currentPage = index;
+                                  });
+                                },
+                                child: SizedBox(
+                                  height: 40,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                                      AnimatedContainer(
+                                        duration:
+                                            const Duration(milliseconds: 250),
+                                        width: currentPage == index ? 24 : 0,
+                                        height: 3,
+                                        decoration: BoxDecoration(
+                                            color: currentPage == index
+                                                ? green
+                                                : white,
+                                            borderRadius:
+                                                BorderRadius.circular(5)),
+                                      ),
+                                      Icon(
+                                        icons[index],
                                         color: currentPage == index
                                             ? green
                                             : white,
-                                        borderRadius: BorderRadius.circular(5)),
+                                      ),
+                                    ],
                                   ),
-                                  Icon(
-                                    icons[index],
-                                    color: currentPage == index ? green : white,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )),
-                ),
+                                ),
+                              )),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
