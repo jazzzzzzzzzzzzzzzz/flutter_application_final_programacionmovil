@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_final_programacionmovil/models/artists.dart';
 
 import '../const.dart';
+import '../widgets/fav_artist_item.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -82,22 +83,24 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-        Row(
-          children: [
-            ...List.generate(
-                listArtists.length,
-                (index) => Container(
-                      width: MediaQuery.of(context).size.width * 0.2,
-                      height: MediaQuery.of(context).size.width * 0.2,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: AssetImage(
-                                'assets/artist/${listArtists[index].image}'),
-                            fit: BoxFit.cover),
-                      ),
-                    ))
-          ],
+        const SizedBox(height: 10),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          physics: const BouncingScrollPhysics(),
+          child: Row(
+            children: [
+              ...List.generate(
+                  listArtists.length,
+                  (index) => Padding(
+                        padding: index == 0
+                            ? const EdgeInsets.only(left: 10, right: 10)
+                            : const EdgeInsets.only(right: 10),
+                        child: FavArtistItem(
+                          artist: listArtists[index],
+                        ),
+                      ))
+            ],
+          ),
         )
       ],
     );
