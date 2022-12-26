@@ -33,9 +33,8 @@ List<SongModel> listSongs = [
     title: 'New Rules',
     songUrl: 'Dua Lipa - New Rules.mp3',
     image: 'dualipaa.jpg',
-    lyric: 'New Rules.lrc',
+    lyric: '',
     likes: [
-      'user1',
       'user2',
       'user3',
       'user4',
@@ -49,7 +48,6 @@ List<SongModel> listSongs = [
     image: 'arianagrandee.jpg',
     lyric: '7 rings.lrc',
     likes: [
-      'user1',
       'user2',
       'user3',
       'user4',
@@ -63,10 +61,8 @@ List<SongModel> listSongs = [
     image: 'shawnn.jpg',
     lyric: 'Shawn Mendes temas.lrc',
     likes: [
-      'user1',
       'user2',
       'user3',
-      'user4',
     ],
   ),
   SongModel(
@@ -77,10 +73,32 @@ List<SongModel> listSongs = [
     image: 'charliee.jpg',
     lyric: 'Light switch.lrc',
     likes: [
-      'user1',
+      'user2',
+      'user3',
+    ],
+  ),
+  SongModel(
+    idSong: 'id_song6',
+    title: 'BTS',
+    singer: 'Boy With Luv',
+    songUrl: 'BTS Boy With Luv.mp3',
+    image: 'btss.jpg',
+    lyric: 'boy with luv by bts.lrc',
+    likes: [
       'user2',
       'user3',
       'user4',
+    ],
+  ),
+  SongModel(
+    idSong: 'id_song7',
+    title: 'Jonas Brothers',
+    singer: 'What A Man Gotta Do',
+    songUrl: 'Jonas Brothers - What A Man Gotta Do.mp3',
+    image: 'jonass.jpg',
+    lyric: 'Jonas letras.lrc',
+    likes: [
+      'user2',
     ],
   ),
 ];

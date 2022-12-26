@@ -31,12 +31,12 @@ List<PackageModel> packages = [
     name: 'Top Song 2022',
     image: 'image2.jpg',
     songs: [
-      listSongs[5],
+      listSongs[2],
       listSongs[0],
       listSongs[1],
-      listSongs[6],
-      listSongs[3],
       listSongs[4],
+      listSongs[6],
+      listSongs[5],
     ],
   ),
   PackageModel(
@@ -57,12 +57,10 @@ List<PackageModel> packages = [
     name: 'Top Song 2022',
     image: 'image4.jpg',
     songs: [
-      listSongs[5],
-      listSongs[0],
       listSongs[1],
-      listSongs[6],
+      listSongs[0],
       listSongs[3],
-      listSongs[4],
+      listSongs[2],
     ],
   ),
   PackageModel(
@@ -70,10 +68,8 @@ List<PackageModel> packages = [
     name: 'Top Song 2022',
     image: 'image5.jpg',
     songs: [
-      listSongs[5],
-      listSongs[0],
       listSongs[1],
-      listSongs[6],
+      listSongs[0],
       listSongs[3],
       listSongs[4],
     ],
