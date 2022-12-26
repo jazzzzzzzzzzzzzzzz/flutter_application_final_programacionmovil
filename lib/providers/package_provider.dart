@@ -6,5 +6,6 @@ class PackageProvider with ChangeNotifier {
   PackageModel? get currentPackage => _currentPackage;
   set currentPackage(PackageModel? current) {
     _currentPackage = current;
+    notifyListeners();
   }
 }

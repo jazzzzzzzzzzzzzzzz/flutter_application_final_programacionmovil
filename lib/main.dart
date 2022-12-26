@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'pages/main_page.dart';
+import 'providers/package_provider.dart';
 import 'providers/page_provider.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => PageProvider()),
+        ChangeNotifierProvider(create: (context) => PackageProvider()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

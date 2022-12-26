@@ -4,6 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_final_programacionmovil/models/artists.dart';
 import 'package:flutter_application_final_programacionmovil/models/packages.dart';
 import 'package:flutter_application_final_programacionmovil/models/songs.dart';
+import 'package:flutter_application_final_programacionmovil/providers/package_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../const.dart';
 import '../widgets/fav_artist_item.dart';
@@ -20,6 +22,7 @@ class HomePage extends StatelessWidget {
     List<SongModel> recent = listSongs;
     List<PackageModel> madeForYou = packages;
     List<PackageModel> popular_hits = packages.reversed.toList();
+    PackageProvider packageProvider = Provider.of<PackageProvider>(context)
     return SingleChildScrollView(
         scrollDirection: Axis.vertical,
         physics: const BouncingScrollPhysics(),
