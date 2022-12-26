@@ -77,55 +77,58 @@ class _MainPageState extends State<MainPage> {
                   //CurrentSong
                   CurrentSong(),
                   // custon botton nav
-                  Container(
-                    height: 60,
-                    decoration: const BoxDecoration(
-                        border: Border(top: BorderSide(color: green))),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: List.generate(
-                          icons.length,
-                          (index) => GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    currentPage = index;
-                                  });
-                                },
-                                child: SizedBox(
-                                  height: 40,
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      AnimatedContainer(
-                                        duration:
-                                            const Duration(milliseconds: 250),
-                                        width: currentPage == index ? 24 : 0,
-                                        height: 3,
-                                        decoration: BoxDecoration(
-                                            color: currentPage == index
-                                                ? green
-                                                : white,
-                                            borderRadius:
-                                                BorderRadius.circular(5)),
-                                      ),
-                                      Icon(
-                                        icons[index],
-                                        color: currentPage == index
-                                            ? green
-                                            : white,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              )),
-                    ),
-                  ),
+                  CustomBottomNAv(currentPage: currentPage),
                 ],
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CustomBottomNAv extends StatelessWidget {
+  const CustomBottomNAv({
+    Key? key,
+    required this.currentPage,
+  }) : super(key: key);
+
+  final int currentPage;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 60,
+      decoration:
+          const BoxDecoration(border: Border(top: BorderSide(color: green))),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: List.generate(
+            icons.length,
+            (index) => GestureDetector(
+                  onTap: () {},
+                  child: SizedBox(
+                    height: 40,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        AnimatedContainer(
+                          duration: const Duration(milliseconds: 250),
+                          width: currentPage == index ? 24 : 0,
+                          height: 3,
+                          decoration: BoxDecoration(
+                              color: currentPage == index ? green : white,
+                              borderRadius: BorderRadius.circular(5)),
+                        ),
+                        Icon(
+                          icons[index],
+                          color: currentPage == index ? green : white,
+                        ),
+                      ],
+                    ),
+                  ),
+                )),
       ),
     );
   }
