@@ -28,21 +28,21 @@ class _MainPageState extends State<MainPage> {
         case 1:
           return const Center(
             child: Text(
-              'Seach',
+              'Buscar',
               style: TextStyle(color: green, fontSize: 32),
             ),
           );
         case 2:
           return const Center(
             child: Text(
-              'Library',
+              'Biblioteca',
               style: TextStyle(color: green, fontSize: 32),
             ),
           );
         case 3:
           return const Center(
             child: Text(
-              'Profile',
+              'Perfil',
               style: TextStyle(color: green, fontSize: 32),
             ),
           );
