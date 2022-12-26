@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_final_programacionmovil/const.dart';
 
@@ -55,7 +57,8 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: black,
       body: body(),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: SizedBox(
+        height: 60,
         child: Stack(
           children: [
             Image.asset(
@@ -63,46 +66,82 @@ class _MainPageState extends State<MainPage> {
               fit: BoxFit.cover,
               width: double.infinity,
             ),
-            Container(
-              height: 60,
-              decoration: const BoxDecoration(
-                  border: Border(top: BorderSide(color: green))),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: List.generate(
-                    icons.length,
-                    (index) => GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              currentPage = index;
-                            });
-                          },
-                          child: SizedBox(
-                            height: 40,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                AnimatedContainer(
-                                  duration: const Duration(milliseconds: 250),
-                                  width: currentPage == index ? 24 : 0,
-                                  height: 3,
-                                  decoration: BoxDecoration(
-                                      color:
-                                          currentPage == index ? green : white,
-                                      borderRadius: BorderRadius.circular(5)),
-                                ),
-                                Icon(
-                                  icons[index],
-                                  color: currentPage == index ? green : white,
-                                ),
-                              ],
+            BgBlur(
+              blur: 10,
+              opacity: 0.8,
+              color: black,
+              child: Container(
+                height: 60,
+                decoration: const BoxDecoration(
+                    border: Border(top: BorderSide(color: green))),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: List.generate(
+                      icons.length,
+                      (index) => GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                currentPage = index;
+                              });
+                            },
+                            child: SizedBox(
+                              height: 40,
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  AnimatedContainer(
+                                    duration: const Duration(milliseconds: 250),
+                                    width: currentPage == index ? 24 : 0,
+                                    height: 3,
+                                    decoration: BoxDecoration(
+                                        color: currentPage == index
+                                            ? green
+                                            : white,
+                                        borderRadius: BorderRadius.circular(5)),
+                                  ),
+                                  Icon(
+                                    icons[index],
+                                    color: currentPage == index ? green : white,
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        )),
+                          )),
+                ),
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class BgBlur extends StatelessWidget {
+  final double opacity, blur;
+  final Widget child;
+  final Color color;
+  const BgBlur({
+    Key? key,
+    required this.opacity,
+    required this.blur,
+    required this.child,
+    required this.color,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur(
+          sigmaX: blur,
+          sigmaY: blur,
+          tileMode: TileMode.clamp,
+        ),
+        child: Container(
+            decoration: BoxDecoration(color: color.withOpacity(opacity)),
+            child: child),
       ),
     );
   }
