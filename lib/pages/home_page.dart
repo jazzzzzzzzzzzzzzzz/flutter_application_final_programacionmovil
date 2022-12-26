@@ -10,6 +10,7 @@ import '../widgets/fav_artist_item.dart';
 import '../widgets/home_page_header.dart';
 import '../widgets/home_page_title.dart';
 import '../widgets/song_package_item.dart';
+import 'package_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -72,6 +73,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 10),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
+              physics: const BouncingScrollPhysics(),
               child: Row(
                 children: [
                   ...List.generate(
@@ -80,9 +82,18 @@ class HomePage extends StatelessWidget {
                             padding: index == 0
                                 ? const EdgeInsets.only(left: 10, right: 10)
                                 : const EdgeInsets.only(right: 10),
-                            child: SongPackageItem(
-                                image: 'package/${madeForYou[index].image}',
-                                text: madeForYou[index].name!),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: ((context) =>
+                                            const PackagePage())));
+                              },
+                              child: SongPackageItem(
+                                  image: 'package/${madeForYou[index].image}',
+                                  text: madeForYou[index].name!),
+                            ),
                           ))
                 ],
               ),

@@ -33,7 +33,7 @@ class CurrentSong extends StatelessWidget {
                         fontSize: 14,
                         fontWeight: FontWeight.w600)),
                 SizedBox(height: 10),
-                Text('Halsey', style: TextStyle(color: white, fontSize: 11)),
+                Text('Halsey', style: TextStyle(color: white, fontSize: 12)),
               ],
             ),
           ),
