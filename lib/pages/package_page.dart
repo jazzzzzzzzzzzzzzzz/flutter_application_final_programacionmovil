@@ -136,7 +136,7 @@ class _PackagePageState extends State<PackagePage> {
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                'Featuring',
+                'Presentando',
                 style: TextStyle(color: white, fontSize: 16),
               ),
             ),

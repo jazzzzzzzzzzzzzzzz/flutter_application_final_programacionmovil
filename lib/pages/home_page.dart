@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
           Column(
             children: [
               const SizedBox(height: 20),
-              const HomePageTitle(text: 'Your Favorite artist'),
+              const HomePageTitle(text: 'Artista Favorito'),
               const SizedBox(height: 10),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
               ? Column(
                   children: [
                     const SizedBox(height: 20),
-                    const HomePageTitle(text: 'Recent Played'),
+                    const HomePageTitle(text: 'Reproducido Recientemente'),
                     const SizedBox(height: 10),
                     SizedBox(
                       width: double.infinity,
@@ -103,7 +103,7 @@ class HomePage extends StatelessWidget {
           Column(
             children: [
               const SizedBox(height: 20),
-              const HomePageTitle(text: 'Made for you'),
+              const HomePageTitle(text: 'Hecho para ti'),
               const SizedBox(height: 10),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -139,7 +139,7 @@ class HomePage extends StatelessWidget {
           Column(
             children: [
               const SizedBox(height: 20),
-              const HomePageTitle(text: 'Popular Hits'),
+              const HomePageTitle(text: 'Éxitos populares'),
               const SizedBox(height: 10),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,

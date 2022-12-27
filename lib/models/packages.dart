@@ -16,7 +16,7 @@ List<PackageModel> packages = [
   PackageModel(
     idPackage: 'idPackage1',
     name: 'Top Song 2022',
-    image: 'image1.jpg',
+    image: 'albun7.jpg',
     songs: [
       listSongs[5],
       listSongs[0],
@@ -28,8 +28,8 @@ List<PackageModel> packages = [
   ),
   PackageModel(
     idPackage: 'idPackage2',
-    name: 'Top Song 2022',
-    image: 'image2.jpg',
+    name: 'Mood Booster',
+    image: 'albun1.jpg',
     songs: [
       listSongs[2],
       listSongs[0],
@@ -41,21 +41,21 @@ List<PackageModel> packages = [
   ),
   PackageModel(
     idPackage: 'idPackage3',
-    name: 'Top Song 2022',
-    image: 'image3.jpg',
+    name: 'Semangat Pagi',
+    image: 'albun2.jpg',
     songs: [
-      listSongs[5],
+      listSongs[2],
       listSongs[0],
       listSongs[1],
-      listSongs[6],
       listSongs[3],
-      listSongs[4],
+      listSongs[6],
+      listSongs[5],
     ],
   ),
   PackageModel(
     idPackage: 'idPackage4',
-    name: 'Top Song 2022',
-    image: 'image4.jpg',
+    name: 'Lagu Santai',
+    image: 'albun3.jpg',
     songs: [
       listSongs[1],
       listSongs[0],
@@ -65,8 +65,8 @@ List<PackageModel> packages = [
   ),
   PackageModel(
     idPackage: 'idPackage5',
-    name: 'Top Song 2022',
-    image: 'image5.jpg',
+    name: 'Santai Sejenak',
+    image: 'albun5.jpg',
     songs: [
       listSongs[1],
       listSongs[0],
